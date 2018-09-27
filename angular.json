@@ -72,10 +72,8 @@
             "tsConfig": "src/tsconfig.spec.json",
             "karmaConfig": "src/karma.conf.js",
             "styles": [
-              {
-                "input": "src/wisla-theme.scss"
-              },
-              "src/styles.css"
+              "src/styles.css",
+              "src/wisla-theme.scss"
             ],
             "scripts": [],
             "assets": [

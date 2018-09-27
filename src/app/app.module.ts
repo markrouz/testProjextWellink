@@ -9,7 +9,8 @@ import { fakeBackendProvider } from './fake-backend';
 import { AppRoutingModule } from './app-routing.module';
 import { ListPageComponent } from './list-page/list-page.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule, MatCheckboxModule } from '@angular/material';
+import { MatButtonModule, MatCheckboxModule, MatFormFieldModule,
+         MatInputModule } from '@angular/material';
 import { CommonFrameComponent } from './common-frame/common-frame.component';
 
 @NgModule({
@@ -27,6 +28,8 @@ import { CommonFrameComponent } from './common-frame/common-frame.component';
     BrowserAnimationsModule,
     MatButtonModule,
     MatCheckboxModule,
+    MatFormFieldModule,
+    MatInputModule,
   ],
   providers: [
     fakeBackendProvider,

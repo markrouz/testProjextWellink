@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { environment } from '../environments/environment';
 import { User } from './user';
 import { HttpClient } from '@angular/common/http';
@@ -10,7 +11,7 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
 
-  register(user: User) {
+  register(user: User): Observable<Object> {
     return this.http.post(`${environment.apiUrl}/users/register`, user);
   }
 }

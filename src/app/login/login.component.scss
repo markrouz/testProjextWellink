@@ -32,25 +32,23 @@ div#main-content-container
 
 }
 
-.login-form-input {
+.mat-form-field {
   height: 21px;
   width: 300px;
-  margin-bottom: 15px;
-  padding-left: 10px;
+  margin-bottom: 35px;
 }
 
 .login-form-image {
   margin-top: 250px;
   margin-bottom: 15px;
+  content: url("../../assets/profile.png");
 }
 
-.submit-button {
-  cursor: pointer;
-  height: 29px;
+.mat-button {
   font-weight: bold;
   background-color: #5c9ef5;
-  border: 0;
   color: white;
+  margin-top: 15px;
 }
 
 .disabled
@@ -58,7 +56,7 @@ div#main-content-container
   background-color: brown;
 }
 
-.validation-messages
+.mat-error
 {
   margin-top: 15px ;
   color: red;

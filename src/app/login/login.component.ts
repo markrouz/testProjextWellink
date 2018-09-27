@@ -38,22 +38,38 @@ export class LoginComponent implements OnInit {
 
     this.isValid = true;
 
-    this.authService.login(this.loginForm.controls['email'].value, this.loginForm.controls['password'].value).pipe(
-      catchError(() => { this.isValid = false; return of(null); }))
-      .subscribe(() => {
-        if (this.isValid) { this.router.navigateByUrl('list-page'); }
-      });
+    this.authService.login(this.getEmail(), this.getPassword()).pipe(
+      catchError(() => {
+        this.isValid = false;
+        return of(null);
+      }))
+    .subscribe(() => {
+      if (this.isValid) { this.router.navigateByUrl('list-page'); }
+    });
   }
 
-  private initLoginForm() {
+  private initLoginForm(): void {
     this.loginForm = this.fb.group({
       email: ['', [
         Validators.required,
-        Validators.pattern('[a-zA-Z_]+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}'),
+        Validators.email,
       ],
       ],
       password: ['',
         Validators.required],
     });
   }
+
+  getEmail(): string {
+    return this.loginForm.controls['email'].value;
+  }
+
+  getPassword(): string {
+    return this.loginForm.controls['password'].value;
+  }
+
+  getErrorMessage(): string {
+    return this.isValid ? '' : '-Wrong email/password';
+  }
+
 }
