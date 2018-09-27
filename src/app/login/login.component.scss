@@ -1,0 +1,67 @@
+.login-sidebar{
+  position: absolute;
+  left: 0;
+  width: 380px;
+  min-width: 380px;
+  top: 0;
+  height: 100%;
+  bottom: 0;
+  background-color: #44536a;
+  min-height: 600px !important;
+  overflow: visible;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+div#main-content-container
+{
+  position: absolute;
+  left: 220px;
+  top: 46px;
+  bottom: 0;
+  right: 0;
+  overflow: hidden;
+  min-width: 1000px;
+}
+
+.login-form
+{
+  display: flex;
+  flex-direction: column;
+
+}
+
+.login-form-input {
+  height: 21px;
+  width: 300px;
+  margin-bottom: 15px;
+  padding-left: 10px;
+}
+
+.login-form-image {
+  margin-top: 250px;
+  margin-bottom: 15px;
+}
+
+.submit-button {
+  cursor: pointer;
+  height: 29px;
+  font-weight: bold;
+  background-color: #5c9ef5;
+  border: 0;
+  color: white;
+}
+
+.disabled
+{
+  background-color: brown;
+}
+
+.validation-messages
+{
+  margin-top: 15px ;
+  color: red;
+  text-align: center;
+}
+

@@ -1,0 +1,17 @@
+<div class="login-sidebar">
+  <img class="login-form-image" src="../../assets/profile.png">
+  <form [formGroup]="loginForm" class="login-form" (ngSubmit)="onSubmit()">
+
+    <input class="login-form-input" type="email" placeholder="Email" formControlName="email"/>
+
+    <input class="login-form-input" type="password" placeholder="Password" formControlName="password">
+
+    <button class="submit-button" type="submit">Enter</button>
+
+    <div class="validation-messages" *ngIf="!isValid">
+      -Wrong email/password
+    </div>
+  </form>
+</div>
+
+<div class="main-content-container"></div>
