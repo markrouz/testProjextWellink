@@ -32,34 +32,31 @@ div#main-content-container
 
 }
 
-.mat-form-field {
+.mat-form-field
+{
   height: 21px;
   width: 300px;
   margin-bottom: 35px;
 }
 
-.login-form-image {
+.login-form-image
+{
   margin-top: 250px;
   margin-bottom: 15px;
   content: url("../../assets/profile.png");
 }
 
-.mat-button {
+.mat-button
+{
   font-weight: bold;
   background-color: #5c9ef5;
   color: white;
   margin-top: 15px;
 }
 
-.disabled
-{
-  background-color: brown;
-}
-
 .mat-error
 {
   margin-top: 15px ;
-  color: red;
   text-align: center;
 }
 

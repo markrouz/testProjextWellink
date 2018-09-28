@@ -2,13 +2,14 @@
   <div class="login-form-image"></div>
   <form [formGroup]="loginForm" class="login-form" (ngSubmit)="onSubmit()">
 
-    <mat-form-field>
-      <input matInput placeholder="Email" formControlName="email"/>
+    <mat-form-field color="accent">
+      <input matInput type="email" placeholder="Email" formControlName="email"/>
     </mat-form-field>
 
-    <mat-form-field>
-      <input matInput placeholder="Password" formControlName="password">
+    <mat-form-field color="accent">
+      <input matInput type="password" placeholder="Password" formControlName="password">
     </mat-form-field>
+
     <button mat-button type="submit">Enter</button>
 
     <mat-error>{{getErrorMessage()}}</mat-error>

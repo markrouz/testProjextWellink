@@ -2,15 +2,16 @@
 
 @include mat-core();
 
-$wisla-theme-primary: mat-palette($mat-light-blue, 700, 300, 400);
-$wisla-theme-accent: mat-palette($mat-light-blue);
+$wisla-theme-primary: mat-palette($mat-grey, 700, 300, 400);
+$wisla-theme-accent: mat-palette($mat-blue-gray, A200, A100, A400);
 $wisla-theme-warn: mat-palette($mat-deep-orange, A200);
 
 // create theme (use mat-dark-theme for themes with dark backgrounds)
-$wisla-theme: mat-light-theme(
+$wisla-theme: mat-dark-theme(
     $wisla-theme-primary,
     $wisla-theme-accent,
     $wisla-theme-warn
 );
 
+/*@import '~@angular/material/prebuilt-themes/pink-bluegrey.css';*/
 @include angular-material-theme($wisla-theme);
