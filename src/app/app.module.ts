@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { AuthGuard } from 'src/app/guards/auth.guard';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -32,7 +33,7 @@ import { CommonFrameComponent } from './common-frame/common-frame.component';
     MatInputModule,
   ],
   providers: [
-    fakeBackendProvider,
+    fakeBackendProvider, AuthGuard,
   ],
   bootstrap: [AppComponent],
 })
