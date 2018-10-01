@@ -1,18 +1,14 @@
-<mat-sidenav-container class="example-container">
-  <mat-sidenav mode="side" opened>
-
-
-    <mat-nav-list>
-      <mat-list-item *ngFor="let link of links">
-        <a matLine href="...">{{ link }}</a>
-        <button mat-icon-button (click)="showInfo(link)">
-          <mat-icon>info</mat-icon>
-        </button>
-      </mat-list-item>
+<mat-sidenav-container class="sidebar-container">
+  <mat-sidenav mode="side" opened class="sidebar-nav">
+    <mat-nav-list *ngFor="let header of sidebarHeaders">
+      <h3 mat-subheader>{{header.header}}</h3>
+      <a mat-list-item *ngFor="let link of header.links" routerLink="{{link.path}}">
+        <div class="nav-list-item">
+            {{link.name}}
+            <img src="{{link.icon}}"/>
+        </div>
+      </a>
     </mat-nav-list>
-
-
-
   </mat-sidenav>
   <mat-sidenav-content>Main content</mat-sidenav-content>
 </mat-sidenav-container>
