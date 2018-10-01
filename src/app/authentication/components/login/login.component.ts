@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { AuthenticationService } from '../authentication.service';
-import { UserService } from '../user.service';
+import { AuthenticationService } from '../../services/authentication.service';
+import { UserService } from 'src/app/core/services/user.service';
 import { catchError } from 'rxjs/operators';
 import { of } from 'rxjs';
 import { Router } from '@angular/router';
@@ -44,7 +44,9 @@ export class LoginComponent implements OnInit {
         return of(null);
       }))
     .subscribe(() => {
-      if (this.isValid) { this.router.navigateByUrl('list-page'); }
+      if (this.isValid) {
+        this.router.navigateByUrl('/list-page');
+      }
     });
   }
 

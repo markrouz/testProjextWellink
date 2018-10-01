@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { environment } from '../environments/environment';
+import { Observable } from 'rxjs';
+import { User } from 'src/app/core/models/user';
+import { environment } from 'src/environments/environment';
 import { map } from 'rxjs/operators';
 
 @Injectable({
@@ -12,7 +14,7 @@ export class AuthenticationService {
 
   constructor(private http: HttpClient) { }
 
-  login(userEmail: string, userPassword: string) {
+  login(userEmail: string, userPassword: string): Observable<User> {
     return this.http.post<any>(this.authUrl, { email: userEmail, password: userPassword })
     .pipe(
       map((user) => {

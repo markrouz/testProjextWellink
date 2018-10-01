@@ -8,7 +8,7 @@ describe('CommonFrameComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CommonFrameComponent ]
+      declarations: [CommonFrameComponent],
     })
     .compileComponents();
   }));

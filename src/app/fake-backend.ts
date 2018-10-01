@@ -38,7 +38,9 @@ export class FakeBackendInterceptor implements HttpInterceptor {
         // validation
         const duplicateUser = users.filter(user => user.email === newUser.email).length;
         if (duplicateUser) {
-          // return throwError({ error: { message: 'Username "' + newUser.email + '" is already taken' } });
+          // return
+          // throwError
+          // ({ error: { message: 'Username "' + newUser.email + '" is already taken' } });
           // todo пока регистрируем единственного юзера через, компонент, оставлю так
           return of(null);
         }
