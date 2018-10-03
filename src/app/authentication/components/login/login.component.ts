@@ -45,7 +45,7 @@ export class LoginComponent implements OnInit {
       }))
     .subscribe(() => {
       if (this.isValid) {
-        this.router.navigateByUrl('/list-page');
+        this.router.navigateByUrl('/core');
       }
     });
   }

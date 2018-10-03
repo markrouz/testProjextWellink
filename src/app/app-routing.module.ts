@@ -8,13 +8,13 @@ const routes: Routes = [
     loadChildren: 'src/app/authentication/authentication.module#AuthenticationModule',
   },
   {
-    path: 'list-page',
+    path: 'core',
     // todo как сделать, чтобы модуль не загружался, если canActivate = false
     loadChildren: 'src/app/core/core.module#CoreModule',
     canActivate: [AuthGuard],
   },
   {
-    path: '',
+    path: '**',
     redirectTo: '/login',
     pathMatch: 'full',
   },
