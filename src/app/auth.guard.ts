@@ -1,10 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Router, CanActivate, ActivatedRouteSnapshot,
-         RouterStateSnapshot, CanLoad, Route } from '@angular/router';
-import { Observable} from 'rxjs';
+         RouterStateSnapshot } from '@angular/router';
 
-@Injectable()
-export class AuthGuard implements CanActivate, CanLoad{
+@Injectable({ providedIn: 'root' })
+export class AuthGuard implements CanActivate{
 
   constructor(private router: Router) { }
 
@@ -20,9 +19,5 @@ export class AuthGuard implements CanActivate, CanLoad{
     // not logged in so redirect to login page with the return url
     this.router.navigate(['/login'], { queryParams: { returnUrl: state.url } });
     return true;
-  }
-
-  canLoad(route: Route): Observable<boolean> | Promise<boolean> | boolean {
-    return this.canLoadFlag;
   }
 }

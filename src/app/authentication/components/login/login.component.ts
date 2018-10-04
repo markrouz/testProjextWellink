@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthenticationService } from '../../services/authentication.service';
 import { UserService } from 'src/app/core/services/user.service';
 import { catchError } from 'rxjs/operators';
@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
 
     this.isValid = true;
 
-    this.authService.login(this.getEmail(), this.getPassword()).pipe(
+    this.authService.login(this.email, this.password).pipe(
       catchError(() => {
         this.isValid = false;
         return of(null);
@@ -62,12 +62,20 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  getEmail(): string {
-    return this.loginForm.controls['email'].value;
+  get emailFormControl(): AbstractControl {
+    return this.loginForm.controls['email'];
   }
 
-  getPassword(): string {
-    return this.loginForm.controls['password'].value;
+  get passwordFormControl(): AbstractControl {
+    return this.loginForm.controls['password'];
+  }
+
+  get email(): string {
+    return this.emailFormControl.value;
+  }
+
+  get password(): string {
+    return this.passwordFormControl.value;
   }
 
   getErrorMessage(): string {

@@ -8,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 // todo надо чтобы скрол не появлялся на боковой панели
 export class CommonFrameComponent implements OnInit {
 
+  currentHeader: string;
+
   sidebarHeaders = [
     {
       header: 'Monitoring',
