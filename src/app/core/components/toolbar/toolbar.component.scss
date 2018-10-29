@@ -1,0 +1,22 @@
+.toolbar-pane-main {
+  height: 46px;
+  min-width: 1000px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+  -moz-box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+  -webkit-box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search-block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search-block__choose-search-type-button {
+  margin-right: 20px;
+}
+

@@ -1,14 +1,15 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthenticationService } from '@app/authentication/services/authentication.service';
+import { User } from '@app/core/models/user.model';
 
 @Component({
   selector: 'app-common-frame',
   templateUrl: './common-frame.component.html',
   styleUrls: ['./common-frame.component.scss'],
 })
-// todo надо чтобы скрол не появлялся на боковой панели
 export class CommonFrameComponent implements OnInit {
 
-  currentHeader: string;
+  currentUser: User;
 
   sidebarHeaders = [
     {
@@ -47,9 +48,13 @@ export class CommonFrameComponent implements OnInit {
     },
   ];
 
-  constructor() { }
+  constructor(private authService: AuthenticationService) { }
 
   ngOnInit() {
+    this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
   }
 
+  logout(): void {
+    this.authService.logout();
+  }
 }

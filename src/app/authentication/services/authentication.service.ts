@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { User } from 'src/app/core/models/user';
-import { environment } from 'src/environments/environment';
+import { User } from '@app/core/models/user.model';
+import { environment } from '@env/environment';
 import { map } from 'rxjs/operators';
 
 @Injectable({
@@ -23,5 +23,9 @@ export class AuthenticationService {
         }
         return user;
       }));
+  }
+
+  logout(): void {
+    localStorage.removeItem('currentUser');
   }
 }

@@ -1,14 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
 import {
-         MatCheckboxModule,
-         MatIconModule,
-         MatListModule,
-         MatSidenavModule,
-       } from '@angular/material';
-import { CommonFrameComponent } from 'src/app/core/components/common-frame/common-frame.component';
-import { ListPageComponent } from 'src/app/core/components/services-list-page/list-page.component';
-import { CoreRoutingModule } from 'src/app/core/core-routing.module';
+  MatCheckboxModule, MatFormFieldModule,
+  MatIconModule,
+  MatListModule,
+  MatSidenavModule, MatToolbarModule, MatButtonModule, MatInputModule, MatSelectModule, MatTableModule, MatSortModule,
+} from '@angular/material';
+import { CommonFrameComponent } from '@app/core/components/common-frame/common-frame.component';
+import { ListPageComponent } from '@app/core/components/services-list-page/list-page.component';
+import { CoreRoutingModule } from '@app/core/core-routing.module';
+import { metaReducers, reducers } from '@app/core/store/reducers';
+import { StoreModule } from '@ngrx/store';
 import { MapStubComponent } from './components/stubs/map-stub/map-stub.component';
 import { AnalyticsStubComponent } from './components/stubs/analytics-stub/analytics-stub.component';
 import { EventsStubComponent } from './components/stubs/events-stub/events-stub.component';
@@ -22,19 +25,39 @@ import { AccountsStubComponent } from './components/stubs/accounts-stub/accounts
 import { SessionsStubComponent } from './components/stubs/sessions-stub/sessions-stub.component';
 import { EventLogStubComponent } from './components/stubs/event-log-stub/event-log-stub.component';
 import { ReportsSlaStubComponent } from './components/stubs/reports-sla-stub/reports-sla-stub.component';
+import { ToolbarComponent } from './components/toolbar/toolbar.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { EntityListComponent } from './components/entity-list/entity-list.component';
+import { EntitySelectedComponent } from './components/entity-selected/entity-selected.component';
+
+const MATERIAL_MODULES = [
+  MatCheckboxModule,
+  MatSidenavModule,
+  MatListModule,
+  MatIconModule,
+  MatFormFieldModule,
+  MatToolbarModule,
+  MatButtonModule,
+  MatFormFieldModule,
+  MatInputModule,
+  MatSelectModule,
+  MatTableModule,
+  MatSortModule,
+];
 
 @NgModule({
   imports: [
     CommonModule,
-    MatCheckboxModule,
     CoreRoutingModule,
-    MatSidenavModule,
-    MatListModule,
-    MatIconModule,
+    LayoutModule,
+    ReactiveFormsModule,
+    ...MATERIAL_MODULES,
+    StoreModule.forRoot(reducers, { metaReducers }),
   ],
   declarations: [
     CommonFrameComponent,
     ListPageComponent,
+    ToolbarComponent,
     MapStubComponent,
     AnalyticsStubComponent,
     EventsStubComponent,
@@ -48,6 +71,9 @@ import { ReportsSlaStubComponent } from './components/stubs/reports-sla-stub/rep
     SessionsStubComponent,
     EventLogStubComponent,
     ReportsSlaStubComponent,
+    ToolbarComponent,
+    EntityListComponent,
+    EntitySelectedComponent,
   ],
   providers: [],
 })

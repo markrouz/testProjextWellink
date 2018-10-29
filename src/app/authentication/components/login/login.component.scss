@@ -12,24 +12,20 @@ select:-webkit-autofill:focus {
   transition: background-color 5000s ease-in-out 0s;
 }
 
-.login-sidebar{
+.login-sidebar {
   position: absolute;
   left: 0;
-  width: 380px;
-  min-width: 380px;
   top: 0;
-  height: 100%;
   bottom: 0;
+  min-width: 380px;
+  min-height: 600px;
   background-color: #44536a;
-  min-height: 600px !important;
-  overflow: visible;
   display: flex;
   align-items: center;
   flex-direction: column;
 }
 
-.main-content-container
-{
+.main-content-container {
   position: absolute;
   left: 220px;
   top: 46px;
@@ -39,41 +35,36 @@ select:-webkit-autofill:focus {
   min-width: 1000px;
 }
 
-.login-form
-{
+.login-form {
   display: flex;
   flex-direction: column;
 }
 
-.mat-form-field
-{
+.login-form__submit-form-error {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.login-form__input {
   height: 21px;
   width: 300px;
   margin-bottom: 45px;
 }
 
-.login-form-image
-{
-  margin-top: 250px;
-  margin-bottom: 15px;
-  content: url("../../../../assets/profile.png");
-}
-
-.mat-button
-{
+.login-form__button {
   font-weight: bold;
   background-color: #5c9ef5;
   color: white;
   margin-top: 15px;
 }
 
-.submit-form-error
-{
-  margin-top: 15px ;
-  text-align: center;
+.login-image {
+  margin-top: 250px;
+  margin-bottom: 15px;
+  content: url("../../../../assets/profile.png");
 }
 
-.login-input
-{
+.white-text {
   -webkit-text-fill-color: white;
 }
+

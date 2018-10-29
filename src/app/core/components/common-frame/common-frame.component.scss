@@ -8,12 +8,68 @@
 }
 
 .sidebar-nav {
-  min-width: 10%
+  min-width: 10%;
 }
 
-.nav-list-item {
+.nav-list__content {
   width:100%;
   display: flex;
   justify-content: space-between;
   align-items: center
+}
+
+.nav-list__link_selected, .nav-list__link_selected:hover {
+  background-color: red;
+}
+
+.sidebar-nav__header {
+  display: flex;
+  align-items: center;
+  height: 46px;
+  width: 220px;
+  background-color: #5c9ef5;
+  padding: 0;
+  position: sticky;
+  top: 0;
+  /*todo чота с картинкой профиля не то*/
+}
+
+.sidebar-nav__profile {
+  display: flex;
+  width: 80%;
+  height: 100%;
+  align-items: center;
+}
+
+.sidebar-nav__profile-img {
+  height: 22px;
+  width: 22px;
+  content: url("../../../../assets/profile.png");
+  margin: 12px 10px;
+}
+
+.sidebar-nav__profile-email {
+  font-size: 12px;
+  font-family: Arial, serif;
+}
+
+.sidebar-nav__logout-link {
+  cursor: pointer;
+  width: 20%;
+  height: 100%;
+}
+
+.sidebar-nav__logout-link:hover {
+  background-color: #5991dd;
+}
+
+.sidebar-nav__logout-img {
+  content: url("../../../../assets/sidebar/log_out.png");
+  margin: 12px 10px;
+}
+
+
+.sidenav-content {
+  display: flex;
+  flex-direction: column;
 }

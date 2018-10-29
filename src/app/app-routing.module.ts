@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AuthGuard } from 'src/app/auth.guard';
-import { AuthenticationModule } from 'src/app/authentication/authentication.module';
-import { CoreModule } from 'src/app/core/core.module';
+import { AuthGuard } from '@app/auth.guard';
+import { AuthenticationModule } from '@app/authentication/authentication.module';
+import { CoreModule } from '@app/core/core.module';
 
 export function lazyCoreModule() {
   return CoreModule;

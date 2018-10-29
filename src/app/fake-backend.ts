@@ -21,8 +21,8 @@ export class FakeBackendInterceptor implements HttpInterceptor {
           const user = filteredUsers[0];
           const reqBody = {
             id: user.id,
-            email: user.username,
-            password: user.firstName,
+            email: user.email,
+            password: user.password,
           };
 
           return of(new HttpResponse({ status: 200, body: reqBody }));

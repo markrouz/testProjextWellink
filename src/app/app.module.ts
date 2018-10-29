@@ -1,8 +1,8 @@
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { AuthGuard } from 'src/app/auth.guard';
-import { fakeBackendProvider } from 'src/app/fake-backend';
+import { AuthGuard } from '@app/auth.guard';
+import { fakeBackendProvider } from '@app/fake-backend';
 
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';

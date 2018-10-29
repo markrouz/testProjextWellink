@@ -1,0 +1,22 @@
+<mat-toolbar class="toolbar-pane-main">
+  <!--<button class="toolbar-pane-main__back-button" mat-button (click)="goBack()">Back</button>-->
+  <div class="toolbar-pane-main__page-name">{{pageName}}</div>
+  <div class="toolbar-pane-main__toggle-filters-pane">
+  </div>
+  <div class="search-block">
+    <mat-form-field class="search-block__choose-search-type-button">
+      <mat-select placeholder="Search type">
+        <mat-option *ngFor="let type of searchTypes" [value]="type">
+          {{type}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <input #searchBox class="search-block__input" matInput type="search" placeholder="Search" [formControl]="toolbarFormControl" (keyup)="search(searchBox.value)">
+    </mat-form-field>
+    <div class="search-block__info-pane">
+    </div>
+  </div>
+  <button mat-button="">Toolbar button</button>
+  <button mat-button="">Another toolbar button</button>
+</mat-toolbar>

@@ -1,9 +1,9 @@
 <div class="login-sidebar">
-  <div class="login-form-image"></div>
+  <div class="login-image"></div>
   <form [formGroup]="loginForm" class="login-form" (ngSubmit)="onSubmit()">
 
-    <mat-form-field color="accent">
-      <input class="login-input" matInput type="email" placeholder="Email" formControlName="email"/>
+    <mat-form-field class="login-form__input" color="accent">
+      <input class="white-text" matInput type="email" placeholder="Email" formControlName="email"/>
       <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
         Please enter a valid email address
       </mat-error>
@@ -12,16 +12,16 @@
       </mat-error>
     </mat-form-field>
 
-    <mat-form-field color="accent">
-      <input class="login-input" matInput type="password" placeholder="Password" formControlName="password">
+    <mat-form-field class="login-form__input" color="accent">
+      <input class="white-text" matInput type="password" placeholder="Password" formControlName="password">
       <mat-error *ngIf="passwordFormControl.hasError('required')">
         Password is <strong>required</strong>
       </mat-error>
     </mat-form-field>
 
-    <button mat-button type="submit">Enter</button>
+    <button class="login-form__button" mat-button type="submit">Enter</button>
 
-    <mat-error class="submit-form-error">{{getErrorMessage()}}</mat-error>
+    <mat-error class="login-form__submit-form-error">{{getErrorMessage()}}</mat-error>
   </form>
 </div>
 
