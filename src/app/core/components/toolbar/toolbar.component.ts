@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Location } from '@angular/common';
 import { FormControl } from '@angular/forms';
 import { MockSearchService } from '@app/core/services/mock-search.service';
 import { Observable, Subject } from 'rxjs';
@@ -19,7 +18,7 @@ export class ToolbarComponent implements OnInit {
   private searchTerms = new Subject<string>();
   private searchResults$: Observable<any[]>;
 
-  constructor(private location: Location, private searchService: MockSearchService) { }
+  constructor(private searchService: MockSearchService) { }
 
   ngOnInit() {
     this.searchResults$ = this.searchTerms.pipe(
@@ -29,12 +28,7 @@ export class ToolbarComponent implements OnInit {
     );
   }
 
-  goBack(): void {
-    this.location.back();
-  }
-
   search(term: string): void {
     this.searchTerms.next(term);
   }
-
 }
