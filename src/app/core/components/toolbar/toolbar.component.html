@@ -1,5 +1,8 @@
 <mat-toolbar class="toolbar-pane-main">
   <div class="toolbar-pane-main__page-name">{{pageName}}</div>
+    <button class="toolbar-pane-main__filter-button" type="button" mat-button (click)="toggleClick.emit()">
+      Open filter panel
+    </button>
   <div class="toolbar-pane-main__toggle-filters-pane">
   </div>
   <div class="search-block">
