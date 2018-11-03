@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatDrawer } from '@angular/material';
+import { ToolbarComponent } from '@app/core/components/toolbar/toolbar.component';
 import { AbstractEntity } from '@app/core/models/abstract-entity.model';
 import { getAllAbstractEntities, getSelectedAbstractEntity } from '@app/core/store/reducers';
 import * as fromAbstractEntities from '@app/core/store/reducers/abstract-entities';
@@ -16,12 +18,18 @@ export class ListPageComponent implements OnInit {
   abstractEntities$: Observable<AbstractEntity[]>;
   selected$: Observable<AbstractEntity>;
 
+  @ViewChild(MatDrawer)
+  private drawer: MatDrawer;
+  @ViewChild(ToolbarComponent)
+  private toolbar: ToolbarComponent;
+
   constructor(private store: Store<fromAbstractEntities.State>) {
     this.abstractEntities$ = store.pipe(select(getAllAbstractEntities));
     this.selected$ = store.pipe(select(getSelectedAbstractEntity));
   }
 
   ngOnInit() {
+    this.toolbar.toggleClick.subscribe(() => this.drawer.toggle());
   }
 
   onSelect(id: number) {

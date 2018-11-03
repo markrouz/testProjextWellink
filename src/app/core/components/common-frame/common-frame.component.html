@@ -20,15 +20,6 @@
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content class="sidenav-content">
-    <mat-drawer-container class="filter-panel-container" autosize>
-      <mat-drawer mode="side">
-        <p>Auto-resizing sidenav</p>
-        <p>Lorem, ipsum dolor sit amet consectetur.</p>
-        <button (click)="showFiller = !showFiller" mat-raised-button>
-          Toggle extra text
-        </button>
-      </mat-drawer>
       <ng-content></ng-content>
-    </mat-drawer-container>
   </mat-sidenav-content>
 </mat-sidenav-container>

@@ -1,4 +1,13 @@
 <app-common-frame>
-  <app-toolbar></app-toolbar>
-  <app-entity-list [entities]="abstractEntities$ | async" (select)="onSelect($event)"></app-entity-list>
+  <mat-drawer-container class="filter-panel-container" autosize>
+    <mat-drawer mode="side">
+      <p>Auto-resizing sidenav</p>
+      <p>Lorem, ipsum dolor sit amet consectetur.</p>
+      <button (click)="showFiller = !showFiller" mat-raised-button>
+        Toggle extra text
+      </button>
+    </mat-drawer>
+    <app-toolbar></app-toolbar>
+    <app-entity-list [entities]="abstractEntities$ | async" (select)="onSelect($event)"></app-entity-list>
+  </mat-drawer-container>
 </app-common-frame>

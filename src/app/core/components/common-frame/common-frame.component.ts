@@ -1,7 +1,5 @@
-import { Component, ContentChild, OnInit, ViewChild } from '@angular/core';
-import { MatDrawer } from '@angular/material';
+import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from '@app/authentication/services/authentication.service';
-import { ToolbarComponent } from '@app/core/components/toolbar/toolbar.component';
 import { User } from '@app/core/models/user.model';
 
 @Component({
@@ -50,19 +48,10 @@ export class CommonFrameComponent implements OnInit {
     },
   ];
 
-  @ContentChild(ToolbarComponent)
-  toolbar: ToolbarComponent;
-
-  @ViewChild(MatDrawer)
-  drawer: MatDrawer;
-
   constructor(private authService: AuthenticationService) { }
 
   ngOnInit() {
     this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
-    if (this.toolbar !== undefined) {
-      this.toolbar.toggleClick.subscribe(() => this.drawer.toggle());
-    }
   }
 
   logout(): void {
