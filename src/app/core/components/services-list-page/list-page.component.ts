@@ -23,6 +23,24 @@ export class ListPageComponent implements OnInit {
   @ViewChild(ToolbarComponent)
   private toolbar: ToolbarComponent;
 
+  private raceFilters = [{ name: 'Alliance' },
+    { name: 'Horde' }];
+
+  private statusFilters = [{ name: 'Married' },
+    { name: 'Free', icon: '' },
+    { name: 'Complicated' }];
+
+  listPageFilters = [
+    {
+      name: 'Entity race',
+      items: this.raceFilters,
+    },
+    {
+      name: 'Entity status',
+      items: this.statusFilters,
+    },
+  ];
+
   constructor(private store: Store<fromAbstractEntities.State>) {
     this.abstractEntities$ = store.pipe(select(getAllAbstractEntities));
     this.selected$ = store.pipe(select(getSelectedAbstractEntity));

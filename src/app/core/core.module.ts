@@ -5,7 +5,7 @@ import {
   MatCheckboxModule, MatFormFieldModule,
   MatIconModule,
   MatListModule,
-  MatSidenavModule, MatToolbarModule, MatButtonModule, MatInputModule, MatSelectModule, MatTableModule, MatSortModule,
+  MatSidenavModule, MatToolbarModule, MatButtonModule, MatInputModule, MatSelectModule, MatTableModule, MatSortModule, MatExpansionModule,
 } from '@angular/material';
 import { CommonFrameComponent } from '@app/core/components/common-frame/common-frame.component';
 import { ListPageComponent } from '@app/core/components/services-list-page/list-page.component';
@@ -44,6 +44,7 @@ const MATERIAL_MODULES = [
   MatSelectModule,
   MatTableModule,
   MatSortModule,
+  MatExpansionModule,
 ];
 
 @NgModule({

@@ -1,11 +1,18 @@
 <app-common-frame>
   <mat-drawer-container class="filter-panel-container" autosize>
     <mat-drawer mode="side">
-      <p>Auto-resizing sidenav</p>
-      <p>Lorem, ipsum dolor sit amet consectetur.</p>
-      <button (click)="showFiller = !showFiller" mat-raised-button>
-        Toggle extra text
-      </button>
+      <mat-accordion>
+        <mat-expansion-panel *ngFor="let filter of listPageFilters">
+          <mat-expansion-panel-header>
+            <mat-panel-title>{{filter.name}}</mat-panel-title>
+          </mat-expansion-panel-header>
+          <mat-list role="list">
+            <mat-list-item class="filter-item-block" *ngFor="let item of filter.items">
+              <mat-checkbox>{{item.name}}</mat-checkbox>
+            </mat-list-item>
+          </mat-list>
+        </mat-expansion-panel>
+      </mat-accordion>
     </mat-drawer>
     <app-toolbar></app-toolbar>
     <app-entity-list [entities]="abstractEntities$ | async" (select)="onSelect($event)"></app-entity-list>

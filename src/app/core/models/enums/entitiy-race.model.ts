@@ -1,4 +1,4 @@
 export const enum EntityRace {
-  Alliance,
-  Horde,
+  Alliance = 'Alliance',
+  Horde = 'Horde',
 }
