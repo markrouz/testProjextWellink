@@ -23,6 +23,7 @@ export class ListPageComponent implements OnInit {
   @ViewChild(ToolbarComponent)
   private toolbar: ToolbarComponent;
 
+  // todo иконки добавить не получилось т.к. не могу переопределить стиль mat-list-item-content
   private raceFilters = [{ name: 'Alliance' },
     { name: 'Horde' }];
 
