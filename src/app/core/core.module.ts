@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
   MatCheckboxModule, MatFormFieldModule,
   MatIconModule,
   MatListModule,
   MatSidenavModule, MatToolbarModule, MatButtonModule, MatInputModule, MatSelectModule, MatTableModule, MatSortModule, MatExpansionModule,
+  MatBadgeModule,
 } from '@angular/material';
 import { CommonFrameComponent } from '@app/core/components/common-frame/common-frame.component';
 import { ListPageComponent } from '@app/core/components/services-list-page/list-page.component';
@@ -45,6 +46,7 @@ const MATERIAL_MODULES = [
   MatTableModule,
   MatSortModule,
   MatExpansionModule,
+  MatBadgeModule,
 ];
 
 @NgModule({
@@ -53,6 +55,7 @@ const MATERIAL_MODULES = [
     CoreRoutingModule,
     LayoutModule,
     ReactiveFormsModule,
+    FormsModule, // todo хотелось бы, чтобы FormsModule импортировался только в app.module.ts
     ...MATERIAL_MODULES,
     StoreModule.forRoot(reducers, { metaReducers }),
   ],

@@ -8,13 +8,13 @@
           </mat-expansion-panel-header>
           <mat-list role="list">
             <mat-list-item class="filter-item-block" *ngFor="let item of filter.items">
-              <mat-checkbox>{{item.name}}</mat-checkbox>
+              <mat-checkbox (change)="applyAllFilters()" [(ngModel)]="item.checked">{{item.name}}</mat-checkbox>
             </mat-list-item>
           </mat-list>
         </mat-expansion-panel>
       </mat-accordion>
     </mat-drawer>
-    <app-toolbar></app-toolbar>
-    <app-entity-list [entities]="abstractEntities$ | async" (select)="onSelect($event)"></app-entity-list>
+    <app-toolbar [badge]="quantityOfChecked"></app-toolbar>
+    <app-entity-list [entities]="filteredAbstractEntities" (select)="onSelect($event)"></app-entity-list>
   </mat-drawer-container>
 </app-common-frame>

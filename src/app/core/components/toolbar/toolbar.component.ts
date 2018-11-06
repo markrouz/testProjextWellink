@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { MockSearchService } from '@app/core/services/mock-search.service';
 import { Observable, Subject } from 'rxjs';
@@ -15,6 +15,7 @@ export class ToolbarComponent implements OnInit {
   pageName: string = 'Page name';
 
   @Output() toggleClick = new EventEmitter();
+  @Input() badge;
 
   searchTypes = ['By page', 'By owners', 'By contracts'];
   private searchTerms = new Subject<string>();

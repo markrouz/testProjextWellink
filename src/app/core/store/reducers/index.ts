@@ -1,6 +1,8 @@
 import { ActionReducer, ActionReducerMap, createFeatureSelector, createSelector, MetaReducer } from '@ngrx/store';
 import * as fromAbstractEntities from './abstract-entities';
 
+// todo состояние не сохраняется, если обновлять страницу редактирования сущности. это, наверное, не очень хорошо.
+// todo по крайней мере, надо сделать так, чтобы не падало с ошибкой
 export interface State {
   abstractEntities: fromAbstractEntities.State;
 }
