@@ -10,6 +10,7 @@ import * as fromAbstractEntities from '@app/core/store/reducers/abstract-entitie
 import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
+// todo надо бы выделить еще общий компонент для работы страницы списков
 @Component({
   selector: 'app-list-page',
   templateUrl: './list-page.component.html',
