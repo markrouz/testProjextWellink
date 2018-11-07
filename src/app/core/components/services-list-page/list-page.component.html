@@ -14,7 +14,7 @@
         </mat-expansion-panel>
       </mat-accordion>
     </mat-drawer>
-    <app-toolbar [badge]="quantityOfChecked"></app-toolbar>
+    <app-toolbar [counter]="quantityOfChecked"></app-toolbar>
     <app-entity-list [entities]="filteredAbstractEntities" (select)="onSelect($event)"></app-entity-list>
   </mat-drawer-container>
 </app-common-frame>

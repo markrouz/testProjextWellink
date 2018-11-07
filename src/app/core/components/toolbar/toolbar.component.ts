@@ -15,7 +15,7 @@ export class ToolbarComponent implements OnInit {
   pageName: string = 'Page name';
 
   @Output() toggleClick = new EventEmitter();
-  @Input() badge;
+  @Input() counter;
 
   searchTypes = ['By page', 'By owners', 'By contracts'];
   private searchTerms = new Subject<string>();
@@ -33,5 +33,9 @@ export class ToolbarComponent implements OnInit {
 
   search(term: string): void {
     this.searchTerms.next(term);
+  }
+
+  get badge(): number {
+    return this.counter > 0 ? this.counter : null;
   }
 }

@@ -1,7 +1,7 @@
 <mat-toolbar class="toolbar-pane-main">
   <div class="toolbar-pane-main__page-name">{{pageName}}</div>
     <button class="toolbar-pane-main__filter-button" type="button" mat-button (click)="toggleClick.emit()">
-      <mat-icon matBadge="{{badge > 0 ? badge : ''}}" matBadgePosition="before" matBadgeColor="accent">view_headline</mat-icon>
+      <mat-icon matBadge="{{badge}}" matBadgePosition="before" matBadgeColor="accent">view_headline</mat-icon>
     </button>
   <div class="toolbar-pane-main__toggle-filters-pane">
   </div>
