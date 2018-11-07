@@ -89,7 +89,7 @@ export class ListPageComponent implements OnInit {
     this.store.dispatch(new abstractEntityActions.Select(id));
   }
 
-  private applyAllFilters() {
+  private applyAllFilters(): void {
 
     this.quantityOfChecked = 0;
 
