@@ -80,6 +80,7 @@ export class ListPageComponent implements OnInit {
   }
 
   ngOnInit() {
+    // todo: прочитал, что нужно избегать подписок в компоненте; плюс надо бы отписываться :)
     this.allAbstractEntities$.subscribe(entities => this.allAbstractEntities = entities);
     // todo при таком подходе фильтры не будут сохранятся при обновлении страницы
     this.filteredAbstractEntities = this.allAbstractEntities;
