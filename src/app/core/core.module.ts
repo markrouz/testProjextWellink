@@ -6,7 +6,7 @@ import {
   MatIconModule,
   MatListModule,
   MatSidenavModule, MatToolbarModule, MatButtonModule, MatInputModule, MatSelectModule, MatTableModule, MatSortModule, MatExpansionModule,
-  MatBadgeModule,
+  MatBadgeModule, MatRadioModule, MatAutocompleteModule, MatDatepickerModule, MatNativeDateModule, MatCardModule,
 } from '@angular/material';
 import { CommonFrameComponent } from '@app/core/components/common-frame/common-frame.component';
 import { ListPageComponent } from '@app/core/components/services-list-page/list-page.component';
@@ -47,6 +47,11 @@ const MATERIAL_MODULES = [
   MatSortModule,
   MatExpansionModule,
   MatBadgeModule,
+  MatRadioModule,
+  MatAutocompleteModule,
+  MatDatepickerModule,
+  MatNativeDateModule,
+  MatCardModule,
 ];
 
 @NgModule({

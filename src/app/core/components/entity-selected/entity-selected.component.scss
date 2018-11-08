@@ -1,0 +1,11 @@
+.edit-entity-form-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.edit-entity-form-block {
+  .mat-radio-button {
+    padding-right: 5px;
+  }
+}

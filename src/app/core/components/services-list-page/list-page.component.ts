@@ -3,7 +3,7 @@ import { MatDrawer } from '@angular/material';
 import { ToolbarComponent } from '@app/core/components/toolbar/toolbar.component';
 import { AbstractEntity } from '@app/core/models/abstract-entity.model';
 import { EntityRace } from '@app/core/models/enums/entitiy-race.model';
-import { EntityStatus } from '@app/core/models/enums/entity-staus.model';
+import { EntityStatus } from '@app/core/models/enums/entity-status.model';
 import * as abstractEntityActions from '@app/core/store/actions/abstract-entities-actions';
 import { getAllAbstractEntities, getSelectedAbstractEntity } from '@app/core/store/reducers';
 import * as fromAbstractEntities from '@app/core/store/reducers/abstract-entities';
@@ -102,7 +102,6 @@ export class ListPageComponent implements OnInit {
       let isAnyFilterInItemChecked = false;
       filter.items.forEach((filterItem) => {
         if (filterItem.checked) {
-          // лучше так: this.allAbstractEntities.filter(item.filterItem());
           matrixRow = matrixRow.concat(filterItem.filterMethod(this.allAbstractEntities));
           isAnyFilterChecked = true;
           isAnyFilterInItemChecked = true;

@@ -1,6 +1,6 @@
 import { AbstractEntity } from '@app/core/models/abstract-entity.model';
 import { EntityRace } from '@app/core/models/enums/entitiy-race.model';
-import { EntityStatus } from '@app/core/models/enums/entity-staus.model';
+import { EntityStatus } from '@app/core/models/enums/entity-status.model';
 import * as AbstractEntityAction from '@app/core/store/actions/abstract-entities-actions';
 
 export interface State {
@@ -16,23 +16,23 @@ export const initialState: State = {
     1: {
       id: 1, name: 'RandomName1',
       race: EntityRace.Alliance,
-      strong: false,
+      isStrong: false,
       status: EntityStatus.Free,
       hobby: 'programming',
       description: 'usual human',
       creationDate: new Date('December 17, 1995 03:24:00'),
-      ip: '192.168.1.1',
+      ipV4: '192.168.1.1',
       lastChangeDate: new Date('October 1, 2018 14:20:00'),
     },
     2: {
       id: 2, name: 'RandomName2',
       race: EntityRace.Horde,
-      strong: true,
+      isStrong: true,
       status: EntityStatus.Complicated,
       hobby: 'killing',
       description: 'usual orc',
       creationDate: new Date('December 14, 1994 11:00:00'),
-      ip: '192.168.1.1',
+      ipV4: '192.168.1.1',
       lastChangeDate: new Date('October 2, 2018 04:19:00'),
     },
   },
@@ -49,6 +49,7 @@ export function reducer(state = initialState, action: AbstractEntityAction.Actio
       return {
         ...state,
         ids: [...state.ids, newEntity.id],
+        abstractEntities: { ...state.abstractEntities, newEntity },
       };
     }
 
