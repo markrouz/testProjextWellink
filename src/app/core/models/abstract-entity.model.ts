@@ -8,7 +8,7 @@ export interface AbstractEntity {
   isStrong: boolean;
   status: EntityStatus;
   hobby: string;
-  description: string; // todo text-area с возможностью растягивания (горизонтальное?)
+  description: string;
   creationDate: Date;
   ipV4: string; // todo поле для ввода ip. Наверное, стоит сделать маску.
   lastChangeDate: Date;
