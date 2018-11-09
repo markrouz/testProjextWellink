@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from '@app/authentication/components/login/login.component';
+import { CreateNewEntityComponent } from '@app/core/components/create-new-entity/create-new-entity.component';
 import { EntitySelectedComponent } from '@app/core/components/entity-selected/entity-selected.component';
 import { ListPageComponent } from '@app/core/components/services-list-page/list-page.component';
 import { AccountsStubComponent } from '@app/core/components/stubs/accounts-stub/accounts-stub.component';
@@ -80,6 +81,10 @@ export const routes: Routes = [
   {
     path: 'edit-entity',
     component: EntitySelectedComponent,
+  },
+  {
+    path: 'create-entity',
+    component: CreateNewEntityComponent,
   },
   {
     path: '**',

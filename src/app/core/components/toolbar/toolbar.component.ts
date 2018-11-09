@@ -11,6 +11,8 @@ import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
 })
 export class ToolbarComponent implements OnInit {
 
+  // todo сделать нормальный тулбар!!
+
   toolbarFormControl = new FormControl('');
   pageName: string = 'Page name';
 

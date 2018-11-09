@@ -19,7 +19,7 @@ import { Location } from '@angular/common';
 })
 export class EntitySelectedComponent implements OnInit {
 
-  private entity: AbstractEntity; // todo в этом компоненте, по всей видимости, я нарушаю redux т.к. entity меняется без всяких действий
+  private entity: AbstractEntity;
 
   entityEditForm: FormGroup;
 

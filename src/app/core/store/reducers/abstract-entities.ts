@@ -49,7 +49,7 @@ export function reducer(state = initialState, action: AbstractEntityAction.Actio
       return {
         ...state,
         ids: [...state.ids, newEntity.id],
-        abstractEntities: { ...state.abstractEntities, newEntity },
+        abstractEntities: { ...state.abstractEntities, [newEntity.id]: newEntity },
       };
     }
 

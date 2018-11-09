@@ -31,6 +31,7 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { EntityListComponent } from './components/entity-list/entity-list.component';
 import { EntitySelectedComponent } from './components/entity-selected/entity-selected.component';
 import { EntityToolbarComponent } from './components/entity-toolbar/entity-toolbar.component';
+import { CreateNewEntityComponent } from './components/create-new-entity/create-new-entity.component';
 
 const MATERIAL_MODULES = [
   MatCheckboxModule,
@@ -85,6 +86,7 @@ const MATERIAL_MODULES = [
     EntityListComponent,
     EntitySelectedComponent,
     EntityToolbarComponent,
+    CreateNewEntityComponent,
   ],
   providers: [],
 })

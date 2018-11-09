@@ -1,0 +1,58 @@
+<app-common-frame>
+  <app-entity-toolbar></app-entity-toolbar>
+  <form [formGroup]="createEntityForm" (ngSubmit)="onSubmit()">
+    <mat-card>
+      <mat-card-content class="edit-entity-form-block">
+
+        <mat-form-field>
+          <input matInput placeholder="Entity name" formControlName="entityName">
+        </mat-form-field>
+
+        <mat-card-content>
+          <mat-radio-group formControlName="entityRace">
+            <mat-radio-button *ngFor="let entityRace of possibleEntityRaces" [value]="entityRace">
+              {{entityRace}}
+            </mat-radio-button>
+          </mat-radio-group>
+        </mat-card-content>
+
+        <mat-card-content>
+          <mat-checkbox formControlName="isEntityStrong">strong entity</mat-checkbox>
+        </mat-card-content>
+
+        <mat-form-field>
+          <mat-select placeholder="Entity status" formControlName="entityStatus">
+            <mat-option *ngFor="let entityStatus of possibleEntityStatuses" [value]="entityStatus">
+              {{entityStatus}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput type="text" placeholder="Entity hobby" formControlName="entityHobby" [matAutocomplete]="autocompleteHobbies">
+          <mat-autocomplete #autocompleteHobbies="matAutocomplete">
+            <mat-option *ngFor="let hobby of filteredPossibleEntityHobbies | async" [value]="hobby">{{hobby}}</mat-option>
+          </mat-autocomplete>
+        </mat-form-field>
+
+        <mat-form-field>
+          <textarea matInput placeholder="Entity description" formControlName="entityDescription"></textarea>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput [matDatepicker]="picker" placeholder="Creation date" formControlName="entityCreationDate">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker disabled="false"></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput placeholder="Entity ipV4" formControlName="entityIpV4">
+        </mat-form-field>
+
+        <button mat-button type="submit">Save</button>
+      </mat-card-content>
+
+    </mat-card>
+  </form>
+</app-common-frame>
+
