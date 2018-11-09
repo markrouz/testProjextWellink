@@ -36,7 +36,7 @@ export class CreateNewEntityComponent implements OnInit {
     this.createEntityForm = this.fb.group({
       entityName: ['', [Validators.required]],
       entityRace: ['', [Validators.required]],
-      isEntityStrong: ['', [Validators.required]],
+      isEntityStrong: [''],
       entityStatus: ['', [Validators.required]],
       entityHobby: ['', [Validators.required]],
       entityDescription: ['', [Validators.required]],
@@ -59,8 +59,11 @@ export class CreateNewEntityComponent implements OnInit {
 
   onSubmit(): void {
 
-    // const newEntityId = Math.floor(Math.random() * (9)) + 2;
-    const newEntityId = 3;
+    if (this.createEntityForm.invalid) {
+      return;
+    }
+
+    const newEntityId = Math.floor(Math.random() * (9)) + 2;
     this.createdEntity = {
       creationDate: this.entityCreationDateFormControl.value,
       description: this.entityDescriptionFormControl.value,

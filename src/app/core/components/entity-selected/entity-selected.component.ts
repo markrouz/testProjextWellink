@@ -41,7 +41,7 @@ export class EntitySelectedComponent implements OnInit {
     this.entityEditForm = this.fb.group({
       entityName: [this.entity.name, [Validators.required]],
       entityRace: [this.entity.race, [Validators.required]],
-      isEntityStrong: [this.entity.isStrong, [Validators.required]],
+      isEntityStrong: [this.entity.isStrong],
       entityStatus: [this.entity.status, [Validators.required]],
       entityHobby: [this.entity.hobby, [Validators.required]],
       entityDescription: [this.entity.description, [Validators.required]],
@@ -70,6 +70,11 @@ export class EntitySelectedComponent implements OnInit {
   }
 
   onSubmit(): void {
+
+    if (this.entityEditForm.invalid) {
+      return;
+    }
+
     this.entity.name = this.entityNameFormControl.value;
     this.entity.race = this.entityRaceFormControl.value;
     this.entity.isStrong = this.entityStrongFormControl.value;

@@ -6,6 +6,7 @@
 
         <mat-form-field>
           <input matInput placeholder="Entity name" formControlName="entityName">
+          <mat-error *ngIf="entityNameFormControl.hasError('required')">Enter entity name!</mat-error>
         </mat-form-field>
 
         <mat-card-content>
@@ -14,6 +15,7 @@
               {{entityRace}}
             </mat-radio-button>
           </mat-radio-group>
+          <mat-error *ngIf="entityRaceFormControl.hasError('required')">Select entity race!</mat-error>
         </mat-card-content>
 
         <mat-card-content>
@@ -26,6 +28,7 @@
               {{entityStatus}}
             </mat-option>
           </mat-select>
+          <mat-error *ngIf="entityStatusFormControl.hasError('required')">Select entity status!</mat-error>
         </mat-form-field>
 
         <mat-form-field>
@@ -33,20 +36,25 @@
           <mat-autocomplete #autocompleteHobbies="matAutocomplete">
             <mat-option *ngFor="let hobby of filteredPossibleEntityHobbies | async" [value]="hobby">{{hobby}}</mat-option>
           </mat-autocomplete>
+          <mat-error *ngIf="entityHobbyFormControl.hasError('required')">Enter entity hobby!</mat-error>
         </mat-form-field>
 
         <mat-form-field>
           <textarea matInput placeholder="Entity description" formControlName="entityDescription"></textarea>
+          <mat-error *ngIf="entityDescriptionFormControl.hasError('required')">Enter entity description!</mat-error>
         </mat-form-field>
 
         <mat-form-field>
           <input matInput [matDatepicker]="picker" placeholder="Creation date" formControlName="entityCreationDate">
           <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
           <mat-datepicker #picker disabled="false"></mat-datepicker>
+          <mat-error *ngIf="entityCreationDateFormControl.hasError('required')">Select creation date!</mat-error>
         </mat-form-field>
 
         <mat-form-field>
           <input matInput placeholder="Entity ipV4" formControlName="entityIpV4">
+          <mat-error *ngIf="entityIpV4FormControl.hasError('required')">Enter ip address!</mat-error>
+          <mat-error *ngIf="entityIpV4FormControl.hasError('pattern') && !entityIpV4FormControl.hasError('required')">Enter valid ip address</mat-error>
         </mat-form-field>
 
         <button mat-button type="submit">Save</button>
